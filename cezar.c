@@ -39,12 +39,11 @@ int main()
   char * cipher = cezar_cipher(str,key);
   printf("%s",cipher);
 
-  FILE *fp = fopen("text.txt", "w");
-  if (fp != NULL)
-  {
-      fputs(cipher, fp);
+  FILE *fp = fopen("cipher.txt", "wb");
+  
+      fprintf(fp,"%s",cipher);
       fclose(fp);
-  }
+  
 
 
   return EXIT_SUCCESS;
